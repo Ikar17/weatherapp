@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://picsum.photos/1600/800");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.weather-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 350px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 5%;
+}
+
+.weather-info_search-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 60%
+}
+
+.weather-info_search-view input{
+    width: 220px;
+    height: 40px;
+    border: 2px black solid;
+    font-size: 150%;
+}
+
+.weather-info_search-view button{
+    width: 120px;
+    height: 35px;
+    border: 2px black solid;
+}
