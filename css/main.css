@@ -10,6 +10,7 @@ main{
     width: 100vw;
     height: 100vh;
     background-image: url("https://picsum.photos/1600/800");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -35,9 +36,14 @@ main{
     height: 60%
 }
 
+.weather-info_search-view_error{
+    color:red;
+}
+
 .weather-info_search-view label{
     font-size:150%;
 }
+
 .weather-info_search-view input{
     width: 220px;
     height: 40px;
@@ -63,3 +69,4 @@ main{
     justify-content: space-between;
     width: 100%;
 }
+
