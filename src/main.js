@@ -18,6 +18,12 @@ const connectHTMLElems = () =>{
 
     viewElems.weatherInfoCity = getDOMElems("weatherInfoCity");
     viewElems.weatherInfoTemperature = getDOMElems("weatherInfoTemperature");
+
+    viewElems.city = getDOMElems("city");
+    viewElems.cityIcon = getDOMElems("cityIcon");
+    viewElems.curr_temp = getDOMElems("curr_temp");
+    viewElems.min_temp = getDOMElems("min_temp");
+    viewElems.max_temp = getDOMElems("max_temp");
 }
 
 const setupListeners = () => {
@@ -38,6 +44,7 @@ const onEnterSubmit = (event) => {
         getWeather(value).then(data => {
             console.log(data);
             switchView();
+            displayWeatherData(data);
             fadeInOut();
         });
     }
@@ -48,6 +55,7 @@ const onClickSubmit = (event) => {
     getWeather(value).then(data => {
         console.log(data);
         switchView();
+        displayWeatherData(data);
         fadeInOut();
     });
 };
@@ -76,6 +84,18 @@ const returnToSearch = () => {
         switchView();
         fadeInOut();
     },500);
+}
+
+const displayWeatherData = (data) => {
+    viewElems.city.innerText = data.name;
+    const icon = data.weather[0].icon;
+    viewElems.cityIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    let curr_temp = Math.round(data.main.temp)-273;
+    let min_temp = Math.round(data.main.temp_min)-273;
+    let max_temp = Math.round(data.main.temp_max)-273;
+    viewElems.curr_temp.innerText = `Current temperature: ${curr_temp}°C`;
+    viewElems.min_temp.innerText = `Min. temperature: ${min_temp}°C`;
+    viewElems.max_temp.innerText = `Max. temperature: ${max_temp}°C`;
 }
 
 document.addEventListener("DOMContentLoaded", initializeApp);

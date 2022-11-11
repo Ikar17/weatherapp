@@ -45,7 +45,7 @@ main{
     font-size: 150%;
 }
 
-.weather-info_search-view button{
+.weather-info_search-view button, .weather-info_forecast-view button{
     width: 120px;
     height: 35px;
     border: 2px black solid;
@@ -53,8 +53,13 @@ main{
 
 .weather-info_forecast-view{
     display: none;
+    flex-direction: column;
+    width: 60%;
+    height: 60%;
 }
 
-.weather-info_forecast-view button{
-    border: 2px black solid;
+.weather-info_city{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
