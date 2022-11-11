@@ -18,11 +18,12 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 700px;
+    width: 40%;
     height: 350px;
     background-color: white;
-    opacity: 0.8;
     border-radius: 5%;
+    transition-duration: .5s;
+    transition-property: opacity;
 }
 
 .weather-info_search-view{
@@ -34,6 +35,9 @@ main{
     height: 60%
 }
 
+.weather-info_search-view label{
+    font-size:150%;
+}
 .weather-info_search-view input{
     width: 220px;
     height: 40px;
@@ -44,5 +48,13 @@ main{
 .weather-info_search-view button{
     width: 120px;
     height: 35px;
+    border: 2px black solid;
+}
+
+.weather-info_forecast-view{
+    display: none;
+}
+
+.weather-info_forecast-view button{
     border: 2px black solid;
 }
